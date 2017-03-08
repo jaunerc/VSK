@@ -5,6 +5,7 @@ public class Timer {
 	private int delta;
 	private long lastTimeStep;
 	private long current;
+	private long accu;
 	private boolean isRunning;
 	
 	public Timer(int delta) {
@@ -14,8 +15,10 @@ public class Timer {
 
 	public boolean tick() {
 		current = System.currentTimeMillis();
-		if((current - lastTimeStep) >= delta) {
+		accu += current - lastTimeStep;
+		if(accu >= delta) {
 			lastTimeStep = current;
+			accu -= delta;
 			return true;
 		}
 		return false;
