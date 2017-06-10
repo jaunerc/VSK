@@ -12,3 +12,4 @@ tmp/
 *.swp
 *~.nib
 local.properties
+/.gradle/
