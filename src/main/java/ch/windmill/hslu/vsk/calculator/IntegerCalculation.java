@@ -16,7 +16,7 @@ public class IntegerCalculation extends Calculation<Long> {
 	public void calculate() {
 		final ArithmeticOperation operation = getArithmeticOperation();
 		if(operation != null) {
-			operation.calc(valueA, valueB);
+			result = operation.calc(valueA, valueB);
 		}
 	}
 
