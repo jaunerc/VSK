@@ -50,14 +50,8 @@ public class ConsoleLineInterpreter {
 		System.out.println("This is a lazy calculator.\nType some calculations...\n");
 	}
 
-	private String readInput(final BufferedReader reader) {
-		String input = null;
-		try {
-			input = reader.readLine();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return input;
+	private String readInput(final BufferedReader reader) throws IOException {
+		return reader.readLine();
 	}
 
 	private boolean handleInput(final String input) {
